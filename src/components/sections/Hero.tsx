@@ -70,7 +70,7 @@ export function Hero() {
           className="lg:w-1/2 relative"
         >
           <div className="relative rounded-3xl overflow-hidden shadow-2xl border-8 border-white">
-            <img src="/public/images/tkns.jpg" alt="Teknisi Servis AC" className="w-full h-[500px] object-cover" />
+            <img src="/images/tkns.jpg" alt="Teknisi Servis AC" className="w-full h-[500px] object-cover" />
             <div className="absolute bottom-6 left-6 bg-white/90 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-white/50 flex items-center gap-4">
               <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-green-600">
                 <ShieldCheck className="w-6 h-6" />
