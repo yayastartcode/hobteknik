@@ -21,7 +21,7 @@ export function Faq() {
     },
     {
       q: "Apakah ada garansi setelah perbaikan?",
-      a: "Tentu. Kami memberikan garansi hingga 30 hari untuk perbaikan kerusakan atau pengisian freon, sehingga Anda bisa tenang menggunakan jasa kami."
+      a: "Tentu. Kami memberikan garansi untuk perbaikan kerusakan atau pengisian freon, sehingga Anda bisa tenang menggunakan jasa kami."
     }
   ];
 
