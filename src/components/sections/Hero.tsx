@@ -20,12 +20,12 @@ export function Hero() {
 
           <motion.h1 variants={fadeIn} className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-slate-900">
             Servis AC & Elektronik <br />
-            Tangerang Selatan, Depok, dan Jakarta <br />
+            Denpasar, Kuta, Seminyak dan Sekitarnya <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-500 to-indigo-600">Rapi, Cepat, Terpercaya</span>
           </motion.h1>
 
           <motion.p variants={fadeIn} className="text-lg text-slate-600 leading-relaxed max-w-2xl">
-            Cha Teknik melayani servis AC & aneka barang elektronik panggilan ke rumah/kantor untuk area Tangerang Selatan, Depok, dan Jakarta. Teknisi kami berpengalaman, pengerjaan rapi, bergaransi, dan bebas biaya kunjungan.
+            HOB Teknik melayani servis AC & aneka barang elektronik panggilan ke rumah/kantor untuk area Kuta, Denpasar dan Bali Pada Umumnya. Teknisi kami berpengalaman, pengerjaan rapi, bergaransi, dan bebas biaya kunjungan.
           </motion.p>
 
           <motion.div variants={fadeIn} className="flex flex-col sm:flex-row gap-4 pt-4">
@@ -45,21 +45,7 @@ export function Hero() {
             </a>
           </motion.div>
 
-          {/* Stats */}
-          <motion.div variants={fadeIn} className="flex gap-8 pt-6 border-t border-slate-200/60 mt-8">
-            <div>
-              <p className="text-3xl font-bold text-slate-900">8.000+</p>
-              <p className="text-sm text-slate-500 font-medium">Pelanggan Puas</p>
-            </div>
-            <div>
-              <p className="text-3xl font-bold text-slate-900">15+</p>
-              <p className="text-sm text-slate-500 font-medium">Teknisi Ahli</p>
-            </div>
-            <div>
-              <p className="text-3xl font-bold text-slate-900">4.9/5</p>
-              <p className="text-sm text-slate-500 font-medium">Rating Google</p>
-            </div>
-          </motion.div>
+
         </motion.div>
 
         {/* Image */}

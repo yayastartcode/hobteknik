@@ -16,12 +16,12 @@ export function Faq() {
       a: "Rata-rata pengerjaan cuci AC standar memakan waktu sekitar 30 - 45 menit per unit. Untuk perbaikan bisa berbeda tergantung tingkat kerusakannya dan pengecekan lebih detail."
     },
     {
-      q: "Apakah area layanan mencakup seluruh Tangerang Selatan, Depok, dan Jakarta?",
-      a: "Ya, kami melayani pemanggilan servis dan pengecekan untuk seluruh wilayah Tangerang Selatan, Kota Depok, dan seluruh wilayah Jakarta Raya tanpa biaya kunjungan tambahan."
+      q: "Apakah area layanan mencakup seluruh Bali?",
+      a: "Area kami di sekitar Denpasar, Seminyak, Badung Kuta dan sekitarnya."
     },
     {
       q: "Apakah ada garansi setelah perbaikan?",
-      a: "Tentu. Kami memberikan garansi untuk perbaikan kerusakan atau pengisian freon, sehingga Anda bisa tenang menggunakan jasa kami."
+      a: "Ya di beberapa pekerjaan ada garansi."
     }
   ];
 

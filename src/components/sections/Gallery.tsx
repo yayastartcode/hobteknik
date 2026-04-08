@@ -3,38 +3,40 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X, ChevronLeft, ChevronRight, ZoomIn } from 'lucide-react';
 import { fadeIn, staggerContainer } from '@/lib/animations';
 
-// Mengambil semua gambar dari folder public/images/gale/
-const images = import.meta.glob('/public/images/gale/*.{jpeg,jpg,png,webp}', { eager: true, query: '?url', import: 'default' });
+// Mengambil semua media dari folder public/images/gale/
+const mediaFiles = import.meta.glob('/public/images/gale/*.{jpeg,jpg,png,webp,mp4,webm}', { eager: true, query: '?url', import: 'default' });
 
-// Mengubah object menjadi array of strings (URL gambar)
-const imageUrls = Object.values(images) as string[];
+// Mengubah object menjadi array of strings (URL media)
+const mediaUrls = Object.values(mediaFiles) as string[];
 
 export function Gallery() {
-  const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
+  const [selectedMediaIndex, setSelectedMediaIndex] = useState<number | null>(null);
 
   const openLightbox = (index: number) => {
-    setSelectedImageIndex(index);
+    setSelectedMediaIndex(index);
     document.body.style.overflow = 'hidden'; // Mencegah scrolling halaman saat lightbox terbuka
   };
 
   const closeLightbox = () => {
-    setSelectedImageIndex(null);
+    setSelectedMediaIndex(null);
     document.body.style.overflow = 'auto'; // Mengembalikan scrolling halaman
   };
 
   const goToNext = (e: React.MouseEvent) => {
     e.stopPropagation();
-    if (selectedImageIndex !== null) {
-      setSelectedImageIndex((selectedImageIndex + 1) % imageUrls.length);
+    if (selectedMediaIndex !== null) {
+      setSelectedMediaIndex((selectedMediaIndex + 1) % mediaUrls.length);
     }
   };
 
   const goToPrev = (e: React.MouseEvent) => {
     e.stopPropagation();
-    if (selectedImageIndex !== null) {
-      setSelectedImageIndex((selectedImageIndex - 1 + imageUrls.length) % imageUrls.length);
+    if (selectedMediaIndex !== null) {
+      setSelectedMediaIndex((selectedMediaIndex - 1 + mediaUrls.length) % mediaUrls.length);
     }
   };
+
+  const isVideo = (url: string) => /\.(mp4|webm|ogg)(\?.*)?$/i.test(url);
 
   return (
     <section id="galeri" className="py-20 bg-white">
@@ -44,27 +46,38 @@ export function Gallery() {
           className="text-center mb-12"
         >
           <h2 className="text-3xl font-bold text-slate-900 mb-4 tracking-tight">Galeri Pekerjaan Kami</h2>
-          <p className="text-slate-600 max-w-2xl mx-auto">Beberapa dokumentasi hasil perbaikan dan perawatan AC yang telah dikerjakan oleh teknisi ahli Cha Teknik.</p>
+          <p className="text-slate-600 max-w-2xl mx-auto">Beberapa dokumentasi hasil perbaikan dan perawatan AC yang telah dikerjakan oleh teknisi ahli HOB Teknik.</p>
         </motion.div>
 
-        {imageUrls.length > 0 ? (
+        {mediaUrls.length > 0 ? (
           <motion.div
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer}
             className="columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4"
           >
-            {imageUrls.map((url, index) => (
+            {mediaUrls.map((url, index) => (
               <motion.div
                 key={index}
                 variants={fadeIn}
                 className="relative group overflow-hidden rounded-2xl cursor-pointer break-inside-avoid shadow-sm hover:shadow-xl transition-all"
                 onClick={() => openLightbox(index)}
               >
-                <img
-                  src={url}
-                  alt={`Galeri AC ${index + 1}`}
-                  loading="lazy"
-                  className="w-full object-cover rounded-2xl group-hover:scale-105 transition-transform duration-500 will-change-transform"
-                />
+                {isVideo(url) ? (
+                  <video
+                    src={url}
+                    muted
+                    loop
+                    playsInline
+                    autoPlay
+                    className="w-full object-cover rounded-2xl group-hover:scale-105 transition-transform duration-500 will-change-transform pointer-events-none"
+                  />
+                ) : (
+                  <img
+                    src={url}
+                    alt={`Galeri AC ${index + 1}`}
+                    loading="lazy"
+                    className="w-full object-cover rounded-2xl group-hover:scale-105 transition-transform duration-500 will-change-transform"
+                  />
+                )}
 
                 {/* Hover overlay dengan icon zoom */}
                 <div className="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center rounded-2xl">
@@ -76,13 +89,13 @@ export function Gallery() {
             ))}
           </motion.div>
         ) : (
-          <p className="text-center text-slate-500">Belum ada gambar di galeri saat ini.</p>
+          <p className="text-center text-slate-500">Belum ada media di galeri saat ini.</p>
         )}
       </div>
 
       {/* Lightbox / Modal */}
       <AnimatePresence>
-        {selectedImageIndex !== null && (
+        {selectedMediaIndex !== null && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -107,20 +120,29 @@ export function Gallery() {
               <ChevronLeft className="w-8 h-8 -ml-1" />
             </button>
 
-            {/* Container Gambar Aktif */}
+            {/* Container Media Aktif */}
             <motion.div
-              layoutId={`gallery-img-${selectedImageIndex}`}
+              layoutId={`gallery-img-${selectedMediaIndex}`}
               className="relative w-full max-w-5xl max-h-[85vh] flex items-center justify-center"
               onClick={(e) => e.stopPropagation()}
             >
-              <img
-                src={imageUrls[selectedImageIndex]}
-                alt={`Galeri AC besar ${selectedImageIndex + 1}`}
-                className="max-w-full max-h-[85vh] object-contain rounded-lg shadow-2xl"
-              />
+              {isVideo(mediaUrls[selectedMediaIndex]) ? (
+                <video
+                  src={mediaUrls[selectedMediaIndex]}
+                  controls
+                  autoPlay
+                  className="max-w-full max-h-[85vh] object-contain rounded-lg shadow-2xl"
+                />
+              ) : (
+                <img
+                  src={mediaUrls[selectedMediaIndex]}
+                  alt={`Galeri AC besar ${selectedMediaIndex + 1}`}
+                  className="max-w-full max-h-[85vh] object-contain rounded-lg shadow-2xl"
+                />
+              )}
 
               <div className="absolute bottom-[-40px] left-0 right-0 text-center text-white/70 text-sm font-medium">
-                {selectedImageIndex + 1} dari {imageUrls.length}
+                {selectedMediaIndex + 1} dari {mediaUrls.length}
               </div>
             </motion.div>
 

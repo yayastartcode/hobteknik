@@ -9,7 +9,7 @@ export function PriceList() {
           className="text-center mb-12"
         >
           <h2 className="text-3xl font-bold text-slate-900 mb-4 tracking-tight">Daftar Harga Layanan</h2>
-          <p className="text-slate-600">Transparan tanpa biaya tersembunyi. Area Tangerang Selatan, Depok & Jakarta bebas biaya kunjungan.</p>
+          <p className="text-slate-600">Transparan tanpa biaya tersembunyi. Area Denpasar, Kuta & Badung bebas biaya kunjungan.</p>
         </motion.div>
 
         <motion.div

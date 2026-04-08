@@ -37,15 +37,15 @@ export function Navbar() {
         <div className="flex justify-between items-center py-4 relative">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
-            <img src="/images/chalg.png" alt="Cha Teknik Logo" className="h-20 lg:h-24 w-auto relative z-10" />
+            <img src="/images/hoblg.png" alt="HOB Teknik Logo" className="h-20 lg:h-24 w-auto relative z-10" />
           </div>
 
           {/* Desktop Menu */}
           <div className="hidden lg:flex space-x-6 items-center">
             {menuLinks.map((link) => (
-              <a 
-                key={link.name} 
-                href={link.href} 
+              <a
+                key={link.name}
+                href={link.href}
                 className="text-sm font-semibold text-slate-600 hover:text-brand-600 transition-colors"
               >
                 {link.name}
@@ -65,7 +65,7 @@ export function Navbar() {
 
           {/* Mobile Menu Button - Hamburger */}
           <div className="lg:hidden flex items-center relative z-10">
-            <button 
+            <button
               onClick={toggleMenu}
               className="p-2 -mr-2 text-slate-700 hover:text-brand-600 hover:bg-slate-100 rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500"
               aria-label="Toggle Navigation Menu"
@@ -107,13 +107,13 @@ export function Navbar() {
                   {link.name}
                 </a>
               ))}
-              
+
               <div className="pt-4 pb-2 px-3">
-                <a 
-                  href={`https://wa.me/${siteConfig.phone1.number}`} 
+                <a
+                  href={`https://wa.me/${siteConfig.phone1.number}`}
                   onClick={closeMenu}
-                  target="_blank" 
-                  rel="noreferrer" 
+                  target="_blank"
+                  rel="noreferrer"
                   className="w-full inline-flex items-center justify-center rounded-xl font-semibold transition-all hover:scale-[1.02] active:scale-95 bg-brand-600 text-white h-12 shadow-md shadow-brand-500/20"
                 >
                   <span className="mdi mdi-whatsapp text-xl mr-2" />
