@@ -21,9 +21,9 @@ export function Promo() {
           {/* Promo Card 1 */}
           <motion.div variants={fadeIn} className="bg-white border text-center border-slate-100 rounded-3xl p-6 shadow-sm hover:shadow-xl transition-shadow relative group">
             <div className="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-bl-xl rounded-tr-3xl">TERLARIS</div>
-            <h3 className="font-bold text-lg text-slate-900 mb-2 mt-2">Cuci AC Split (0,5-1 PK)</h3>
+            <h3 className="font-bold text-lg text-slate-900 mb-2 mt-2">Cuci AC Standart 1 PK</h3>
             <div className="flex items-end justify-center gap-2 mb-6 text-center">
-              <p className="text-3xl font-extrabold text-brand-600">Rp 70.000</p>
+              <p className="text-3xl font-extrabold text-brand-600">Rp 85.000</p>
               <p className="text-sm text-slate-400 line-through mb-1">Rp 100.000</p>
             </div>
             <ul className="space-y-3 mb-8 text-left text-sm text-slate-600">
@@ -40,9 +40,9 @@ export function Promo() {
           {/* Promo Card 2 */}
           <motion.div variants={fadeIn} className="bg-white border-2 text-center border-brand-500 rounded-3xl p-6 shadow-xl shadow-brand-100 relative group lg:scale-105 z-10">
             <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-brand-500 text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-md">REKOMENDASI</div>
-            <h3 className="font-bold text-lg text-slate-900 mb-2 mt-2">Cuci + Tambah Freon</h3>
+            <h3 className="font-bold text-lg text-slate-900 mb-2 mt-2">Cuci + Tambah Freon 0.5 PK</h3>
             <div className="flex items-end justify-center gap-2 mb-6 text-center">
-              <p className="text-4xl font-extrabold text-brand-600">Rp 150.000</p>
+              <p className="text-4xl font-extrabold text-brand-600">Rp 310.000</p>
             </div>
             <ul className="space-y-3 mb-8 text-left text-sm text-slate-600 font-medium">
               {['Semua fitur cuci AC', 'Tambah Freon R32/R410a', 'Garansi Dingin', 'Free Konsultasi'].map(item => (
@@ -57,9 +57,9 @@ export function Promo() {
 
           {/* Promo Card 3 */}
           <motion.div variants={fadeIn} className="bg-white border text-center border-slate-100 rounded-3xl p-6 shadow-sm hover:shadow-xl transition-shadow relative group">
-            <h3 className="font-bold text-lg text-slate-900 mb-2 mt-2">Isi Freon Full (R32)</h3>
+            <h3 className="font-bold text-lg text-slate-900 mb-2 mt-2">Isi Full Freon 0.5 - 1 PK</h3>
             <div className="flex items-end justify-center gap-2 mb-6 text-center">
-              <p className="text-3xl font-extrabold text-brand-600">Rp 250.000</p>
+              <p className="text-3xl font-extrabold text-brand-600">Rp 375.000</p>
             </div>
             <ul className="space-y-3 mb-8 text-left text-sm text-slate-600">
               {['Pengisian Freon Full', 'Cek Kebocoran', 'Vakum Sistem', 'Garansi 30 Hari'].map(item => (
@@ -74,9 +74,9 @@ export function Promo() {
 
           {/* Promo Card 4 */}
           <motion.div variants={fadeIn} className="bg-white border text-center border-slate-100 rounded-3xl p-6 shadow-sm hover:shadow-xl transition-shadow relative group">
-            <h3 className="font-bold text-lg text-slate-900 mb-2 mt-2">Bongkar Pasang AC</h3>
+            <h3 className="font-bold text-lg text-slate-900 mb-2 mt-2">Bongkar-Pasang 0.5 PK</h3>
             <div className="flex items-end justify-center gap-2 mb-6 text-center">
-              <p className="text-3xl font-extrabold text-brand-600">Rp 300.000</p>
+              <p className="text-3xl font-extrabold text-brand-600">Rp 450.000</p>
             </div>
             <ul className="space-y-3 mb-8 text-left text-sm text-slate-600">
               {['Bongkar AC Lama', 'Pasang di Lokasi Baru', 'Setting & Testing', '(Belum termasuk material)'].map(item => (

@@ -5,7 +5,7 @@ import { siteConfig } from '@/config/site';
 
 export function BookingForm() {
   const [name, setName] = useState('');
-  const [service, setService] = useState('Cuci AC (Rp 70.000)');
+  const [service, setService] = useState('Cuci AC Standart (Mulai Rp 85.000)');
   const [address, setAddress] = useState('');
 
   const handleSend = (phoneNumber: string) => {
@@ -53,11 +53,12 @@ export function BookingForm() {
                   onChange={(e) => setService(e.target.value)}
                   className="flex h-12 w-full rounded-xl border border-slate-200 bg-slate-50/50 px-4 py-2 text-sm ring-offset-background placeholder:text-slate-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 transition-colors appearance-none"
                 >
-                  <option>Cuci AC (Rp 70.000)</option>
-                  <option>Cuci + Tambah Freon (Rp 150.000)</option>
-                  <option>Isi Freon Full R32/R410 (Rp 250.000)</option>
-                  <option>Bongkar Pasang AC (Rp 300.000)</option>
-                  <option>Perbaikan AC Error/Bocor (Konsultasi)</option>
+                  <option>Cuci AC Standart (Mulai Rp 85.000)</option>
+                  <option>Cuci AC Inverter (Mulai Rp 100.000)</option>
+                  <option>Tambah/Isi Full Freon (Mulai Rp 225.000)</option>
+                  <option>Bongkar/Pasang AC (Mulai Rp 200.000)</option>
+                  <option>Perbaikan Modul / PCB (Mulai Rp 775.000)</option>
+                  <option>Pengecekan (Rp 100.000)</option>
                   <option>Lainnya</option>
                 </select>
               </div>
